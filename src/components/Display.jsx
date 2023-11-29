@@ -1,7 +1,7 @@
 /*eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
-import uuid4 from 'uuid4';
+import { useEffect, useRef, useState } from "react"; 
 import '../styles/index.css'
+import uuid4 from "uuid4";
 export default function Display({score, setScore, setHighScore,style,sfw,difficulty}){
     const [ccards,setCcards] = useState([]);
     const firstrender = useRef(true);
