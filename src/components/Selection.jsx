@@ -50,7 +50,7 @@ export default function Selection({start, setSfw,setDifficulty,setStart}){
                 <div className="sfw-buttons">
                     <button id="sfw" onClick={
                         ()=>{
-                            setSfw(true);
+                            setSfw('sfw');
                             const nsfw = document.getElementById('nsfw');
                             const sfw = document.getElementById('sfw');
                             nsfw.classList.remove('clicked');
@@ -59,7 +59,7 @@ export default function Selection({start, setSfw,setDifficulty,setStart}){
                     }>Yes</button>
                     <button id="nsfw" onClick={
                         ()=>{
-                            setSfw(false);
+                            setSfw('nsfw');
                             const nsfw = document.getElementById('nsfw');
                             const sfw = document.getElementById('sfw');
                             nsfw.classList.add('clicked');
