@@ -23,4 +23,8 @@ A memory card matching game built with React to showcase mastery of state manage
 
 Run `npm install` and `npm run dev` to run locally. Open your browser to ` http://localhost:5173/` et voila!
 
+## Live Preview
+
+[Here](https://waifu-memory-card.vercel.app/)
+
 Contributions welcome! Please submit issues/PRs on GitHub.
