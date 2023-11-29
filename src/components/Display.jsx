@@ -8,8 +8,7 @@ export default function Display({score, setScore, setHighScore,style,sfw,difficu
     const [urlArr,setUrlArr] = useState([]);
     useEffect(()=>{
         async function getpoke(){
-            let cat = sfw? 'sfw':'nsfw';
-            const response = await fetch('https://api.waifu.pics/'+cat+'/waifu');
+            const response = await fetch('https://api.waifu.pics/'+sfw+'/waifu');
             const data = await response.json();
             return data;
         }
