@@ -39,14 +39,30 @@ body *::selection{
     --color-text-primary: hsl(0, 0%, 20%);     /* Primary text color */
     --color-text-primary-dark:  hsl(0, 0%, 16%);  /* Darker shade of primary text */
     --color-text-secondary: hsl(0, 0%, 40%);   /* Secondary text color */
-  }
+}
+.dark{
+    --color-primary: hsl(340, 80%, 60%);      /* Accent color */
+    --color-primary-dark: hsl(340, 80%, 50%); /* Darker shade of primary */
+  
+    /* Secondary Colors */
+    --color-secondary: hsl(40, 100%, 80%);     /* Secondary color */
+  
+    /* Background Colors */
+    --color-background: hsl(0, 0%, 20%);       /* Background color */
+    --color-background-dark: hsl(0, 0%, 10%);  /* Darker shade of background */
+  
+    /* Text Colors */
+    --color-text-primary: hsl(0, 0%, 80%);     /* Primary text color */
+    --color-text-primary-dark:  hsl(0, 0%, 86%);  /* Darker shade of primary text */
+    --color-text-secondary: hsl(0, 0%, 60%);   /* Secondary text color */
+}
   h1,h2{
     font-family: 'CustomFont3';
   }
 body{
     width: 100vw;
     height: 100vh;
-    background: #f2f2f2;
+    background: var(--color-background);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,12 +119,12 @@ footer{
     /*Place at bottom of page*/
     margin-top: auto;
     width: 100%;
-    background: #f2f2f2;
     align-self: flex-end;
     display: flex;
     justify-content: center;
     font-family: 'CustomFont4';
     font-size: 2rem;
+    color: var(--color-text-primary);
 }
 .difficulty-buttons, .sfw-buttons{
     display: flex;
@@ -123,6 +139,7 @@ button{
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
     font-size: 1.2rem;
     border-radius: 5px;
+    color: var(--color-text-primary-dark);
     border: 2px solid var(--color-text-primary);
     background-color: var(--color-background-dark);
     transition: transform 0.3s ease-in-out;
@@ -132,6 +149,7 @@ button:hover{
     cursor: pointer;
     color: var(--color-primary-dark);
     transform: scale(1.09);
+
 }
 
 .Start{
@@ -156,7 +174,7 @@ button:hover{
 }
 .card{
    height: min-content;
-    border-radius: 5px;
+    border-radius: 6px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
     background-color: var(--color-background-dark);
 }
@@ -165,7 +183,7 @@ button:hover{
     cursor: pointer;
     &>img{
         box-shadow: 0 0 11px 0 var(--color-primary-dark);
-        transform: scale(1.01);
+        transform: scale(1.019);
     }
 }
 .high-score{

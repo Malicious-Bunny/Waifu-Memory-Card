@@ -64,6 +64,9 @@ export default function Selection({start, setSfw,setDifficulty,setStart}){
                             const sfw = document.getElementById('sfw');
                             nsfw.classList.add('clicked');
                             sfw.classList.remove('clicked');
+                            //setting dark mode
+                            const root = document.documentElement;
+                            root.classList.toggle('dark');
                         }
                     }>No</button>
                 </div>
