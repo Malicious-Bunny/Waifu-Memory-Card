@@ -31,7 +31,7 @@ export default function Display({score, setScore, setHighScore,style,sfw,difficu
     },[sfw,difficulty,firstrender]);
   
     return <div style={style} className="display">
-        {ccards.map((card)=>{
+        { ccards.length >0?   ccards.map((card)=>{
             console.log(ccards);
             return <div onClick={(e)=>{
                 console.log(e.target.src);
@@ -54,7 +54,25 @@ export default function Display({score, setScore, setHighScore,style,sfw,difficu
             }} key={uuid4()} className="card">
                 <img  key={uuid4()} src={card} alt="card"/>
             </div>  
-        })}
+        }) : <div className="container">
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+      </div>
+      }
     </div>
 
 } 
