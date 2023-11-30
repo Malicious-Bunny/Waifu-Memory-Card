@@ -5,29 +5,34 @@ import uuid4 from "uuid4";
 export default function Display({score, setScore, setHighScore,style,sfw,difficulty}){
     const [ccards,setCcards] = useState([]);
     const firstrender = useRef(true);
-    const [urlArr,setUrlArr] = useState([]); 
+    const [urlArr,setUrlArr] = useState([]);    
     useEffect(()=>{
         async function getpoke(){
             const response = await fetch('https://api.waifu.pics/'+sfw+'/waifu');
             const data = await response.json();
             return data;
         }
-        if(firstrender.current){
+        if(firstrender.current){ 
             firstrender.current = false;
             let array = [];
         for (let i = 0; i < difficulty; i++) {
             getpoke().then((data)=>{
                 array[i]=data.url;
                 console.log(data);
+                if(i===difficulty-1){
+                    setCcards(array);
+                }
             });
+            
         }
-        setCcards(array);
+       
       
        }
-    },[sfw,difficulty,firstrender,ccards]);
+    },[sfw,difficulty,firstrender]);
   
     return <div style={style} className="display">
         {ccards.map((card)=>{
+            console.log(ccards);
             return <div onClick={(e)=>{
                 console.log(e.target.src);
                 if(urlArr.includes(e.target.src)){

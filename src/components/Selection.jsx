@@ -50,11 +50,14 @@ export default function Selection({start, setSfw,setDifficulty,setStart}){
                 <div className="sfw-buttons">
                     <button id="sfw" onClick={
                         ()=>{
-                            setSfw('sfw');
+                            
                             const nsfw = document.getElementById('nsfw');
                             const sfw = document.getElementById('sfw');
                             nsfw.classList.remove('clicked');
                             sfw.classList.add('clicked');
+                            const root = document.documentElement;
+                            root.classList.remove('dark');
+                            return setSfw('sfw');
                         }
                     }>Yes</button>
                     <button id="nsfw" onClick={
@@ -66,7 +69,7 @@ export default function Selection({start, setSfw,setDifficulty,setStart}){
                             sfw.classList.remove('clicked');
                             //setting dark mode
                             const root = document.documentElement;
-                            root.classList.toggle('dark');
+                            root.classList.add('dark');
                         }
                     }>No</button>
                 </div>

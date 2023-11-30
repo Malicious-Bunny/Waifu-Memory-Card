@@ -4,8 +4,12 @@
     box-sizing: border-box;
 
 }
-body *::selection{
+#body *::selection{
     background-color: var(--color-primary);
+}
+body{
+    background: var(--color-background);
+    transition: background 0.3s ease-in-out;
 }
 @font-face {
     font-family: 'Love Child';
@@ -39,6 +43,7 @@ body *::selection{
     --color-text-primary: hsl(0, 0%, 20%);     /* Primary text color */
     --color-text-primary-dark:  hsl(0, 0%, 16%);  /* Darker shade of primary text */
     --color-text-secondary: hsl(0, 0%, 40%);   /* Secondary text color */
+    
 }
 .dark{
     --color-primary: hsl(340, 80%, 60%);      /* Accent color */
@@ -59,7 +64,7 @@ body *::selection{
   h1,h2{
     font-family: 'CustomFont3';
   }
-body{
+#body{
     width: 100vw;
     height: 100vh;
     background: var(--color-background);
@@ -67,6 +72,7 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    transition: background 0.3s ease-in-out;
 }
 header{
     display: flex;
@@ -102,17 +108,20 @@ main{
 .selection{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
     width: 100%;
+    gap: 1rem;
     margin-top: 11rem;
 
+}
+.selection *{
+    color: var(--color-text-primary);
 }
 .selection > div{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    color: var(--color-text-primary);
 
 }
 footer{
@@ -125,6 +134,7 @@ footer{
     font-family: 'CustomFont4';
     font-size: 2rem;
     color: var(--color-text-primary);
+    background: var(--color-background);
 }
 .difficulty-buttons, .sfw-buttons{
     display: flex;
@@ -157,7 +167,7 @@ button:hover{
 }
 .display{
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
@@ -188,6 +198,10 @@ button:hover{
 }
 .high-score{
     margin-top: 0.3rem;
+    color: var(--color-text-primary-dark);
+}
+.score{
+    color:var(--color-text-primary-dark);
 }
 .clicked{
    color: var(--color-primary-dark);
